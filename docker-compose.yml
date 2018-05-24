@@ -1,0 +1,30 @@
+version: '2'
+services:
+  # Cambiar el academy por el nombre de nuestra app
+  biciun-api:
+    build: .
+    environment:
+      PORT: '4500'
+      SHOW_URLS: 'true'
+
+      USERS_URL: '192.168.99.101'
+      USERS_PORT: '3001'
+      USERS_ENTRY: 'users/'
+      
+      PRESTAMOS_URL: '192.168.99.101'
+      PRESTAMOS_PORT: '3002'
+      PRESTAMOS_ENTRY: 'prestamos/'
+      
+      PROFILES_PHOTOS_URL: '192.168.99.101'
+      PROFILES_PHOTOS_PORT: '3003'
+      PROFILES_PHOTOS_ENTRY: 'profilepictures/'
+      
+      LOGIN_URL: '192.168.99.102'
+      LOGIN_PORT: '5000'
+      LOGIN_ENTRY: 'login'
+
+      BICICLETAS_URL: '192.168.99.102'
+      BICICLETAS_PORT: '3004'
+      BICICLETAS_ENTRY: 'bicicletas/'
+    ports:
+      - '4500:4500'
